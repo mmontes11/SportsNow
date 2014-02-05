@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SportsNowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SportsNowModelStoreContainer">
+          <EntitySet Name="Category" EntityType="SportsNowModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comment" EntityType="SportsNowModel.Store.Comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommentTag" EntityType="SportsNowModel.Store.CommentTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Recommendation" EntityType="SportsNowModel.Store.Recommendation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecommendationUserGroup" EntityType="SportsNowModel.Store.RecommendationUserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SportEvent" EntityType="SportsNowModel.Store.SportEvent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="SportsNowModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroup" EntityType="SportsNowModel.Store.UserGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="SportsNowModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfileUserGroup" EntityType="SportsNowModel.Store.UserProfileUserGroup" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Comment_SportEvent" Association="SportsNowModel.Store.FK_Comment_SportEvent">
+            <End Role="SportEvent" EntitySet="SportEvent" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_UserProfile" Association="SportsNowModel.Store.FK_Comment_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentTag_Comment" Association="SportsNowModel.Store.FK_CommentTag_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="CommentTag" EntitySet="CommentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentTag_Tag" Association="SportsNowModel.Store.FK_CommentTag_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="CommentTag" EntitySet="CommentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_SportEvent" Association="SportsNowModel.Store.FK_Recommendation_SportEvent">
+            <End Role="SportEvent" EntitySet="SportEvent" />
+            <End Role="Recommendation" EntitySet="Recommendation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_UserProfile" Association="SportsNowModel.Store.FK_Recommendation_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="Recommendation" EntitySet="Recommendation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecommendationUserGroup_Recommendation" Association="SportsNowModel.Store.FK_RecommendationUserGroup_Recommendation">
+            <End Role="Recommendation" EntitySet="Recommendation" />
+            <End Role="RecommendationUserGroup" EntitySet="RecommendationUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecommendationUserGroup_UserGroup" Association="SportsNowModel.Store.FK_RecommendationUserGroup_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroup" />
+            <End Role="RecommendationUserGroup" EntitySet="RecommendationUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportEvent_Category" Association="SportsNowModel.Store.FK_SportEvent_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="SportEvent" EntitySet="SportEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfileUserGroup_UserGroup" Association="SportsNowModel.Store.FK_UserProfileUserGroup_UserGroup">
+            <End Role="UserGroup" EntitySet="UserGroup" />
+            <End Role="UserProfileUserGroup" EntitySet="UserProfileUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfileUserGroup_UserProfile" Association="SportsNowModel.Store.FK_UserProfileUserGroup_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfileUserGroup" EntitySet="UserProfileUserGroup" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="dateComment" Type="datetime" Nullable="false" />
+          <Property Name="eventId" Type="bigint" Nullable="false" />
+          <Property Name="userId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentTag">
+          <Key>
+            <PropertyRef Name="tagId" />
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="tagId" Type="bigint" Nullable="false" />
+          <Property Name="commentId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recommendation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dateRecommendation" Type="date" Nullable="false" />
+          <Property Name="why" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="sportEventId" Type="bigint" Nullable="false" />
+          <Property Name="userProfileId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecommendationUserGroup">
+          <Key>
+            <PropertyRef Name="recommendationId" />
+            <PropertyRef Name="userGroupId" />
+          </Key>
+          <Property Name="recommendationId" Type="bigint" Nullable="false" />
+          <Property Name="userGroupId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SportEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="dateEvent" Type="datetime" Nullable="false" />
+          <Property Name="place" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="review" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="category_id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="descrip" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="loginName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="enPassword" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="lastName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="language" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="country" Type="varchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="UserProfileUserGroup">
+          <Key>
+            <PropertyRef Name="userProfileId" />
+            <PropertyRef Name="userGroupId" />
+          </Key>
+          <Property Name="userProfileId" Type="bigint" Nullable="false" />
+          <Property Name="userGroupId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Comment_SportEvent">
+          <End Role="SportEvent" Type="SportsNowModel.Store.SportEvent" Multiplicity="1" />
+          <End Role="Comment" Type="SportsNowModel.Store.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SportEvent">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_UserProfile">
+          <End Role="UserProfile" Type="SportsNowModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="Comment" Type="SportsNowModel.Store.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentTag_Comment">
+          <End Role="Comment" Type="SportsNowModel.Store.Comment" Multiplicity="1" />
+          <End Role="CommentTag" Type="SportsNowModel.Store.CommentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CommentTag">
+              <PropertyRef Name="commentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentTag_Tag">
+          <End Role="Tag" Type="SportsNowModel.Store.Tag" Multiplicity="1" />
+          <End Role="CommentTag" Type="SportsNowModel.Store.CommentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CommentTag">
+              <PropertyRef Name="tagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_SportEvent">
+          <End Role="SportEvent" Type="SportsNowModel.Store.SportEvent" Multiplicity="1" />
+          <End Role="Recommendation" Type="SportsNowModel.Store.Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SportEvent">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="sportEventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recommendation_UserProfile">
+          <End Role="UserProfile" Type="SportsNowModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="Recommendation" Type="SportsNowModel.Store.Recommendation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recommendation">
+              <PropertyRef Name="userProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecommendationUserGroup_Recommendation">
+          <End Role="Recommendation" Type="SportsNowModel.Store.Recommendation" Multiplicity="1" />
+          <End Role="RecommendationUserGroup" Type="SportsNowModel.Store.RecommendationUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recommendation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RecommendationUserGroup">
+              <PropertyRef Name="recommendationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecommendationUserGroup_UserGroup">
+          <End Role="UserGroup" Type="SportsNowModel.Store.UserGroup" Multiplicity="1" />
+          <End Role="RecommendationUserGroup" Type="SportsNowModel.Store.RecommendationUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RecommendationUserGroup">
+              <PropertyRef Name="userGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportEvent_Category">
+          <End Role="Category" Type="SportsNowModel.Store.Category" Multiplicity="0..1" />
+          <End Role="SportEvent" Type="SportsNowModel.Store.SportEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SportEvent">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfileUserGroup_UserGroup">
+          <End Role="UserGroup" Type="SportsNowModel.Store.UserGroup" Multiplicity="1" />
+          <End Role="UserProfileUserGroup" Type="SportsNowModel.Store.UserProfileUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserProfileUserGroup">
+              <PropertyRef Name="userGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfileUserGroup_UserProfile">
+          <End Role="UserProfile" Type="SportsNowModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="UserProfileUserGroup" Type="SportsNowModel.Store.UserProfileUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserProfileUserGroup">
+              <PropertyRef Name="userProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Es.Udc.DotNet.SportsNow.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SportsNowEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Es.Udc.DotNet.SportsNow.Model.Category" />
+          <EntitySet Name="Comments" EntityType="Es.Udc.DotNet.SportsNow.Model.Comment" />
+          <EntitySet Name="Recommendations" EntityType="Es.Udc.DotNet.SportsNow.Model.Recommendation" />
+          <EntitySet Name="SportEvents" EntityType="Es.Udc.DotNet.SportsNow.Model.SportEvent" />
+          <EntitySet Name="Tags" EntityType="Es.Udc.DotNet.SportsNow.Model.Tag" />
+          <EntitySet Name="UserGroups" EntityType="Es.Udc.DotNet.SportsNow.Model.UserGroup" />
+          <EntitySet Name="UserProfiles" EntityType="Es.Udc.DotNet.SportsNow.Model.UserProfile" />
+          <AssociationSet Name="FK_SportEvent_Category" Association="Es.Udc.DotNet.SportsNow.Model.FK_SportEvent_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="SportEvent" EntitySet="SportEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_SportEvent" Association="Es.Udc.DotNet.SportsNow.Model.FK_Comment_SportEvent">
+            <End Role="SportEvent" EntitySet="SportEvents" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_UserProfile" Association="Es.Udc.DotNet.SportsNow.Model.FK_Comment_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_SportEvent" Association="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_SportEvent">
+            <End Role="SportEvent" EntitySet="SportEvents" />
+            <End Role="Recommendation" EntitySet="Recommendations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recommendation_UserProfile" Association="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="Recommendation" EntitySet="Recommendations" />
+          </AssociationSet>
+          <AssociationSet Name="CommentTag" Association="Es.Udc.DotNet.SportsNow.Model.CommentTag">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="RecommendationUserGroup" Association="Es.Udc.DotNet.SportsNow.Model.RecommendationUserGroup">
+            <End Role="Recommendation" EntitySet="Recommendations" />
+            <End Role="UserGroup" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="UserProfileUserGroup" Association="Es.Udc.DotNet.SportsNow.Model.UserProfileUserGroup">
+            <End Role="UserGroup" EntitySet="UserGroups" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SportEvents" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_SportEvent_Category" FromRole="Category" ToRole="SportEvent" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="value" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dateComment" Nullable="false" />
+          <NavigationProperty Name="SportEvent" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Comment_SportEvent" FromRole="Comment" ToRole="SportEvent" />
+          <NavigationProperty Name="UserProfile" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Comment_UserProfile" FromRole="Comment" ToRole="UserProfile" />
+          <NavigationProperty Name="Tags" Relationship="Es.Udc.DotNet.SportsNow.Model.CommentTag" FromRole="Comment" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Recommendation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="dateRecommendation" Nullable="false" />
+          <Property Type="String" Name="why" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SportEvent" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_SportEvent" FromRole="Recommendation" ToRole="SportEvent" />
+          <NavigationProperty Name="UserProfile" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_UserProfile" FromRole="Recommendation" ToRole="UserProfile" />
+          <NavigationProperty Name="UserGroups" Relationship="Es.Udc.DotNet.SportsNow.Model.RecommendationUserGroup" FromRole="Recommendation" ToRole="UserGroup" />
+        </EntityType>
+        <EntityType Name="SportEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dateEvent" Nullable="false" />
+          <Property Type="String" Name="place" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="review" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_SportEvent_Category" FromRole="SportEvent" ToRole="Category" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Comment_SportEvent" FromRole="SportEvent" ToRole="Comment" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_SportEvent" FromRole="SportEvent" ToRole="Recommendation" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.SportsNow.Model.CommentTag" FromRole="Tag" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descrip" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.SportsNow.Model.RecommendationUserGroup" FromRole="UserGroup" ToRole="Recommendation" />
+          <NavigationProperty Name="UserProfiles" Relationship="Es.Udc.DotNet.SportsNow.Model.UserProfileUserGroup" FromRole="UserGroup" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="loginName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="enPassword" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="firstName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="lastName" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="language" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="country" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Comment_UserProfile" FromRole="UserProfile" ToRole="Comment" />
+          <NavigationProperty Name="Recommendations" Relationship="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_UserProfile" FromRole="UserProfile" ToRole="Recommendation" />
+          <NavigationProperty Name="UserGroups" Relationship="Es.Udc.DotNet.SportsNow.Model.UserProfileUserGroup" FromRole="UserProfile" ToRole="UserGroup" />
+        </EntityType>
+        <Association Name="FK_SportEvent_Category">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.SportEvent" Role="SportEvent" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Comment_SportEvent">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.SportEvent" Role="SportEvent" Multiplicity="1" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Comment" Role="Comment" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Comment_UserProfile">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Comment" Role="Comment" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Recommendation_SportEvent">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.SportEvent" Role="SportEvent" Multiplicity="1" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Recommendation_UserProfile">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+        </Association>
+        <Association Name="CommentTag">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Comment" Role="Comment" Multiplicity="*" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        <Association Name="RecommendationUserGroup">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.Recommendation" Role="Recommendation" Multiplicity="*" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.UserGroup" Role="UserGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="UserProfileUserGroup">
+          <End Type="Es.Udc.DotNet.SportsNow.Model.UserGroup" Role="UserGroup" Multiplicity="*" />
+          <End Type="Es.Udc.DotNet.SportsNow.Model.UserProfile" Role="UserProfile" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SportsNowModelStoreContainer" CdmEntityContainer="SportsNowEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="dateComment" ColumnName="dateComment" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recommendations">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.Recommendation">
+              <MappingFragment StoreEntitySet="Recommendation">
+                <ScalarProperty Name="why" ColumnName="why" />
+                <ScalarProperty Name="dateRecommendation" ColumnName="dateRecommendation" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SportEvents">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.SportEvent">
+              <MappingFragment StoreEntitySet="SportEvent">
+                <ScalarProperty Name="review" ColumnName="review" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroups">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="Es.Udc.DotNet.SportsNow.Model.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="language" ColumnName="language" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="enPassword" ColumnName="enPassword" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_SportEvent_Category" TypeName="Es.Udc.DotNet.SportsNow.Model.FK_SportEvent_Category" StoreEntitySet="SportEvent">
+            <EndProperty Name="SportEvent">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="id" ColumnName="category_id" />
+            </EndProperty>
+            <Condition ColumnName="category_id" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Comment_SportEvent" TypeName="Es.Udc.DotNet.SportsNow.Model.FK_Comment_SportEvent" StoreEntitySet="Comment">
+            <EndProperty Name="Comment">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="SportEvent">
+              <ScalarProperty Name="id" ColumnName="eventId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Comment_UserProfile" TypeName="Es.Udc.DotNet.SportsNow.Model.FK_Comment_UserProfile" StoreEntitySet="Comment">
+            <EndProperty Name="Comment">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="id" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Recommendation_SportEvent" TypeName="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_SportEvent" StoreEntitySet="Recommendation">
+            <EndProperty Name="Recommendation">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="SportEvent">
+              <ScalarProperty Name="id" ColumnName="sportEventId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Recommendation_UserProfile" TypeName="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_UserProfile" StoreEntitySet="Recommendation">
+            <EndProperty Name="Recommendation">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="id" ColumnName="userProfileId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CommentTag" TypeName="Es.Udc.DotNet.SportsNow.Model.CommentTag" StoreEntitySet="CommentTag">
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="id" ColumnName="tagId" />
+            </EndProperty>
+            <EndProperty Name="Comment">
+              <ScalarProperty Name="id" ColumnName="commentId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RecommendationUserGroup" TypeName="Es.Udc.DotNet.SportsNow.Model.RecommendationUserGroup" StoreEntitySet="RecommendationUserGroup">
+            <EndProperty Name="UserGroup">
+              <ScalarProperty Name="id" ColumnName="userGroupId" />
+            </EndProperty>
+            <EndProperty Name="Recommendation">
+              <ScalarProperty Name="id" ColumnName="recommendationId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UserProfileUserGroup" TypeName="Es.Udc.DotNet.SportsNow.Model.UserProfileUserGroup" StoreEntitySet="UserProfileUserGroup">
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="id" ColumnName="userProfileId" />
+            </EndProperty>
+            <EndProperty Name="UserGroup">
+              <ScalarProperty Name="id" ColumnName="userGroupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SportsNowModel" ZoomLevel="83">
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.Category" Width="1.5" PointX="0.75" PointY="4" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.Comment" Width="1.5" PointX="5.25" PointY="3.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.Recommendation" Width="1.5" PointX="5.25" PointY="0.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.SportEvent" Width="1.5" PointX="3" PointY="3.5" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.Tag" Width="1.5" PointX="7.5" PointY="2" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.UserGroup" Width="1.5" PointX="7.5" PointY="5.125" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Es.Udc.DotNet.SportsNow.Model.UserProfile" Width="1.5" PointX="9.75" PointY="4.625" Height="3.1340950520833388" />
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.FK_SportEvent_Category" >
+          <ConnectorPoint PointX="2.25" PointY="4.797841796875" />
+          <ConnectorPoint PointX="3" PointY="4.797841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.FK_Comment_SportEvent" >
+          <ConnectorPoint PointX="4.5" PointY="4.8362939453125" />
+          <ConnectorPoint PointX="5.25" PointY="4.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.FK_Comment_UserProfile" >
+          <ConnectorPoint PointX="9.75" PointY="4.84375" />
+          <ConnectorPoint PointX="7.395833333333333" PointY="4.8437499999999991" />
+          <ConnectorPoint PointX="7.229166666666667" PointY="4.84375" />
+          <ConnectorPoint PointX="6.75" PointY="4.84375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_SportEvent" >
+          <ConnectorPoint PointX="3.75" PointY="3.5" />
+          <ConnectorPoint PointX="3.75" PointY="1.8362939453124998" />
+          <ConnectorPoint PointX="5.25" PointY="1.8362939453124998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.FK_Recommendation_UserProfile" >
+          <ConnectorPoint PointX="10.5" PointY="4.625" />
+          <ConnectorPoint PointX="10.5" PointY="1.34375" />
+          <ConnectorPoint PointX="6.75" PointY="1.34375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.CommentTag" >
+          <ConnectorPoint PointX="6.75" PointY="3.75" />
+          <ConnectorPoint PointX="7.125" PointY="3.375" />
+          <ConnectorPoint PointX="7.125" PointY="3.9706835937500031" />
+          <ConnectorPoint PointX="7.2535744349011209" PointY="3.8421091588488818" />
+          <ConnectorPoint PointX="7.3714255650988791" PointY="3.724258028651124" />
+          <ConnectorPoint PointX="7.5" PointY="3.5956835937500031" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.RecommendationUserGroup" >
+          <ConnectorPoint PointX="6.75" PointY="2.8602791983173068" />
+          <ConnectorPoint PointX="7.3125" PointY="3.4227791983173068" />
+          <ConnectorPoint PointX="7.3125" PointY="6.1151432291666694" />
+          <ConnectorPoint PointX="7.5" PointY="6.1151432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="Es.Udc.DotNet.SportsNow.Model.UserProfileUserGroup" >
+          <ConnectorPoint PointX="9" PointY="6.1151432291666694" />
+          <ConnectorPoint PointX="9.75" PointY="6.1151432291666694" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

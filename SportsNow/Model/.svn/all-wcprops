@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/grao4/mad/13-14/mad01/!svn/ver/106/tags/it-2/SportsNow/Model
+END
+CommentEventDTO.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/CommentEventDTO.cs
+END
+UserGroup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/UserGroup.cs
+END
+Model.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/Model.csproj
+END
+EventRecommendationDTO.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/EventRecommendationDTO.cs
+END
+SportsNowModel.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/SportsNowModel.Designer.cs
+END
+UserProfile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/UserProfile.cs
+END
+App.Config
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/App.Config
+END
+Comment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/Comment.cs
+END
+GroupDTO.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/GroupDTO.cs
+END
+Recommendation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/Recommendation.cs
+END
+EventCategoryDTO.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/EventCategoryDTO.cs
+END
+SportsNowModel.edmx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/SportsNowModel.edmx
+END
+SportEvent.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/SportEvent.cs
+END

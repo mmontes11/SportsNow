@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/TagDao
+END
+ITagDao.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/TagDao/ITagDao.cs
+END
+TagDaoEntityFramework.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/TagDao/TagDaoEntityFramework.cs
+END
+SqlServerCreateTables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/TagDao/SqlServerCreateTables.sql
+END

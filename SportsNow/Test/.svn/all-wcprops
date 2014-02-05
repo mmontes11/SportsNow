@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/grao4/mad/13-14/mad01/!svn/ver/106/tags/it-2/SportsNow/Test
+END
+Test.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/Test.csproj
+END
+TestManager.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/TestManager.cs
+END
+App.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/App.config
+END
+UnitTest1.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/UnitTest1.cs
+END
+ISportEventServiceTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/grao4/mad/13-14/mad01/!svn/ver/106/tags/it-2/SportsNow/Test/ISportEventServiceTest.cs
+END
+IUserGroupServiceTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/IUserGroupServiceTest.cs
+END
+IUserServiceTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Test/IUserServiceTest.cs
+END

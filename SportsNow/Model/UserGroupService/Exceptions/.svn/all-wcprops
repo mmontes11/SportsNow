@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/UserGroupService/Exceptions
+END
+UnsubscribeFromGroupException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/UserGroupService/Exceptions/UnsubscribeFromGroupException.cs
+END
+SubscribeFromGroupException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/grao4/mad/13-14/mad01/!svn/ver/99/tags/it-2/SportsNow/Model/UserGroupService/Exceptions/SubscribeFromGroupException.cs
+END

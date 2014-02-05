@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" requirePermission="true" />
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" />
+  </configSections>
+  <!-- The following connection string is not currently used, because the 
+  connection string is being obtained from the Unity section. However, it could
+  be required if the user wants to instantiate a short life context using the 
+  following code:
+  using (SportsNowEntitiesContainer container = 
+    new SportsNowEntitiesContainer())-->
+  <!-- [BEGIN] Logging Application Block Configuration -->
+  <loggingConfiguration name="Logging Application Block" tracingEnabled="true" defaultCategory="General" logWarningsWhenNoCategoriesMatch="true">
+    <listeners>
+      <add name="FlatFile TraceListener" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FlatFileTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FlatFileTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" fileName="C:\SourceCode\log\SportsNow.log" header="" footer="" formatter="Simple Log Format" traceOutputOptions="None" filter="All" />
+    </listeners>
+    <formatters>
+      <add type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" template="[{timestamp}] [{category}] ({severity}) - {message} " name="Simple Log Format" />
+    </formatters>
+    <categorySources>
+      <add switchValue="All" name="General">
+        <listeners>
+          <add name="FlatFile TraceListener" />
+        </listeners>
+      </add>
+      <add switchValue="All" name="Transaction" />
+    </categorySources>
+    <specialSources>
+      <allEvents switchValue="All" name="All Events" />
+      <notProcessed switchValue="All" name="Unprocessed Category" />
+      <errors switchValue="All" name="Logging Errors &amp; Warnings">
+        <listeners>
+          <add name="FlatFile TraceListener" />
+        </listeners>
+      </errors>
+    </specialSources>
+  </loggingConfiguration>
+  <!-- [END] Logging Application Block Configuration -->
+  <connectionStrings>
+    <add name="SportsNowEntities" connectionString="metadata=res://*/SportsNowModel.csdl|res://*/SportsNowModel.ssdl|res://*/SportsNowModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost\SQLExpress;Initial Catalog=sportsnow;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <!-- [BEGIN] Unity Application Block Configuration -->
+  <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
+    <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Microsoft.Practices.Unity.Interception.Configuration" />
+    <!-- <alias alias="aliasName" type="Class FullName, Assembly Name" /> -->
+    <alias alias="IUserProfileDao" type="Es.Udc.DotNet.SportsNow.Model.UserProfileDao.IUserProfileDao, SportsNow.Model" />
+    <alias alias="UserProfileDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.UserProfileDao.UserProfileDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="ICategoryDao" type="Es.Udc.DotNet.SportsNow.Model.CategoryDao.ICategoryDao, SportsNow.Model" />
+    <alias alias="CategoryDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.CategoryDao.CategoryDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="ICommentDao" type="Es.Udc.DotNet.SportsNow.Model.CommentDao.ICommentDao, SportsNow.Model" />
+    <alias alias="CommentDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.CommentDao.CommentDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="IRecommendationDao" type="Es.Udc.DotNet.SportsNow.Model.RecommendationDao.IRecommendationDao, SportsNow.Model" />
+    <alias alias="RecommendationDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.RecommendationDao.RecommendationDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="ISportEventDao" type="Es.Udc.DotNet.SportsNow.Model.SportEventDao.ISportEventDao, SportsNow.Model" />
+    <alias alias="SportEventDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.SportEventDao.SportEventDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="ISportEventService" type="Es.Udc.DotNet.SportsNow.Model.SportEventService.ISportEventService, SportsNow.Model" />
+    <alias alias="SportEventService" type="Es.Udc.DotNet.SportsNow.Model.SportEventService.SportEventService, SportsNow.Model" />
+
+    <alias alias="ITagDao" type="Es.Udc.DotNet.SportsNow.Model.TagDao.ITagDao, SportsNow.Model" />
+    <alias alias="TagDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.TagDao.TagDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="IUserGroupDao" type="Es.Udc.DotNet.SportsNow.Model.UserGroupDao.IUserGroupDao, SportsNow.Model" />
+    <alias alias="UserGroupDaoEntityFramework" type="Es.Udc.DotNet.SportsNow.Model.UserGroupDao.UserGroupDaoEntityFramework, SportsNow.Model" />
+
+    <alias alias="IUserGroupService" type="Es.Udc.DotNet.SportsNow.Model.UserGroupService.IUserGroupService, SportsNow.Model" />
+    <alias alias="UserGroupService" type="Es.Udc.DotNet.SportsNow.Model.UserGroupService.UserGroupService, SportsNow.Model" />
+
+    <alias alias="IUserService" type="Es.Udc.DotNet.SportsNow.Model.UserService.IUserService, SportsNow.Model" />
+    <alias alias="UserService" type="Es.Udc.DotNet.SportsNow.Model.UserService.UserService, SportsNow.Model" />
+
+    <!-- <alias alias="InterfaceInterceptor" type="Microsoft.Practices.Unity.InterceptionExtension.InterfaceInterceptor, Microsoft.Practices.Unity.Interception" />  -->
+    <alias alias="ObjectContext" type="System.Data.Objects.ObjectContext, System.Data.Entity" />
+    <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
+    <alias alias="TransactionalInterceptor" type="Es.Udc.DotNet.ModelUtil.Transactions.TransactionalHandler, ModelUtil" />
+    <container>
+      <!-- ************   Mappings for Bussiness Objects ************* -->
+      <register type="IUserProfileDao" mapTo="UserProfileDaoEntityFramework"></register>
+      <register type="IUserService" mapTo="UserService"></register>
+
+      <register type="ICategoryDao" mapTo="CategoryDaoEntityFramework"></register>
+
+      <register type="ICommentDao" mapTo="CommentDaoEntityFramework"></register>
+
+      <register type="IRecommendationDao" mapTo="RecommendationDaoEntityFramework"></register>
+
+      <register type="IRecommendationDao" mapTo="RecommendationDaoEntityFramework"></register>
+
+      <register type="ISportEventDao" mapTo="SportEventDaoEntityFramework"></register>
+      <register type="ISportEventService" mapTo="SportEventService"></register>
+
+      <register type="ITagDao" mapTo="TagDaoEntityFramework"></register>
+
+      <register type="IUserGroupDao" mapTo="UserGroupDaoEntityFramework"></register>
+      <register type="IUserGroupService" mapTo="UserGroupService"></register>
+
+      <!-- Object Context -->
+      <register type="ObjectContext" mapTo="ObjectContext">
+        <lifetime type="singleton" />
+        <constructor>
+          <param name="connectionString" type="System.String">
+            <value value="metadata=res://*/SportsNowModel.csdl|res://*/SportsNowModel.ssdl|res://*/SportsNowModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;&#xD;&#xA;              Data Source=localhost\SQLExpress;&#xD;&#xA;              Initial Catalog=sportsnow;&#xD;&#xA;              Persist Security Info=True;&#xD;&#xA;              Integrated Security=True;&#xD;&#xA;              MultipleActiveResultSets=True&quot;" />
+          </param>
+        </constructor>
+      </register>
+      <extension type="Interception" />
+      <interceptors>
+        <interceptor type="InterfaceInterceptor">
+          <default type="IUserService" />
+        </interceptor>
+      </interceptors>
+    </container>
+  </unity>
+  <!-- [END] Unity Application Block Configuration -->
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+</configuration>

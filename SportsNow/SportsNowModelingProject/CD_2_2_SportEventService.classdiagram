@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e7f3f0a5-4689-4032-887a-3843d62ead98" name="CD_2_2_SportEventService" linkedPackageId="bf45b3d4-1140-4044-9201-f4cab68ce50b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="9b89f91b-973c-42c7-a036-e1719d461ab3" name="ISportEventService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9bd8d0f7-85ef-4e16-8e98-9ed3b4130ba0" />
+        <suppliersInternal>
+          <dependency Id="81e2457e-acdd-482d-9b51-f3212ca89950">
+            <interfaceMoniker Id="bd086b6f-052e-4483-8fc1-454c795728db" LastKnownName="IUserProfileDao" />
+            <elementDefinition Id="e805e0c8-4c8c-4517-8763-c081cbbbed2e" />
+          </dependency>
+          <dependency Id="f841d24a-c881-4a89-b821-78d774b09af0">
+            <interfaceMoniker Id="e09877fd-de70-467b-9e51-6361729b8b13" LastKnownName="IUserGroupDao" />
+            <elementDefinition Id="061d63ea-ab3e-44bc-b816-7a09866bf233" />
+          </dependency>
+          <dependency Id="31141116-d828-48b2-9b9c-63c9532bba48">
+            <interfaceMoniker Id="678b322d-5f7c-4b16-994f-3e98a2a0e07a" LastKnownName="ICommentDao" />
+            <elementDefinition Id="2fa79ccc-65a3-4af6-b7ce-828fa97fc894" />
+          </dependency>
+          <dependency Id="bff9a442-8787-4c75-93bb-5d96c6bf4749">
+            <interfaceMoniker Id="d705ebc4-b898-48b1-9d27-8a92e9a1ea49" LastKnownName="ISportEventDao" />
+            <elementDefinition Id="a302d313-093a-4234-a1a4-49ffdf378091" />
+          </dependency>
+          <dependency Id="779e6cef-e8e6-43de-9898-ba03fc554778">
+            <interfaceMoniker Id="e3764506-67fc-48d9-a8e3-a0d51f8aa335" LastKnownName="IRecommendationDao" />
+            <elementDefinition Id="067f3180-123a-4e48-aaf9-eaebe8ad1010" />
+          </dependency>
+          <dependency Id="8ff266e4-9659-4382-a017-930f71890bfa">
+            <interfaceMoniker Id="e71fc5ee-36a9-4d1f-93db-7ce275b1d042" LastKnownName="ICategoryDao" />
+            <elementDefinition Id="97be0a4f-aaac-42a0-ac97-38bdf6ef75b7" />
+          </dependency>
+          <dependency Id="0e1ab30e-7f17-4f7c-b5ef-6b6f7e737677">
+            <interfaceMoniker Id="c881d97c-6cf7-4ebb-9a76-d82296b893e0" LastKnownName="ITagDao" />
+            <elementDefinition Id="0f97b648-dd2f-4453-bf6a-4319a7ab559e" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation Id="191a5d8d-e708-4ab1-b298-4872bc41cbf3" name="FindByKeywordsCategory" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2b69f75c-7ccd-496a-aec3-928c9e84903c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c45fdede-1665-43af-b060-aaab429acea5" direction="Return" isUnique="false">
+                  <elementDefinition Id="d483b638-2439-4a6e-9dec-ee3c75767273" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be680cd3-2c93-43c9-81b8-cd395769f8a3" LastKnownName="List&lt;SportEvent&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c5db8cee-f520-486c-a19a-f9131028a221" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="6e4c2170-c10d-49da-942f-009115547131" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cd8300cb-375a-4a0b-91f3-60ee3e01c31f" name="long categoryId" direction="In" isUnique="false">
+                  <elementDefinition Id="62aa7dba-ae0f-48aa-8bfe-d16058f48a78" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e7543652-e0d3-4dfb-8fe7-66b788354954" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="e497337c-6564-41c6-ba51-cb78b1a976ef" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9e88efd-7401-4cfb-af46-013f6f7926ef" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="24981490-5eb6-4e9f-b7cd-aef5bd619cc7" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5aed4e3a-aac9-42e7-b333-937c4e7c2331" name="CreateComment" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2f0872be-3861-4c76-99ff-b80da9f667a2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7c5e08f-5f8b-478e-a6ea-5e63e70413d4" direction="Return" isUnique="false">
+                  <elementDefinition Id="10b30bca-0495-46f0-8f03-9fa5432dec39" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7118204f-7920-4d68-8187-a78c631bdc85" LastKnownName="Comment" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ef0bbf95-d3b5-4be6-8a35-26b30fd42656" name="string comment" direction="In" isUnique="false">
+                  <elementDefinition Id="fe01485e-f5cb-4bc9-b7f3-5d3c023aa941" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="65a11f88-2e3a-4b35-87e1-50240de44fc0" name="long eventId" direction="In" isUnique="false">
+                  <elementDefinition Id="88c7bf1d-b753-4dcc-a959-f9847cadb71c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e625a69-7f04-4b8b-bb84-72325824db3f" name="long userId" direction="In" isUnique="false">
+                  <elementDefinition Id="598fc1e1-e226-4504-9f94-607d50e5caa3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9dff5cd5-35a8-40f2-b0e5-83b560399ca7" name="List&lt;long&gt; tagsId" direction="In" isUnique="false">
+                  <elementDefinition Id="f1dbda81-8dd8-4e5f-9488-4c101ab0f6ad" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6a6ed5dc-88c4-460d-92c8-87caa9f30725" name="GetEventComments" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="465a01e9-9074-4fc1-a36d-08efd547c891" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ec1db28c-0514-4abe-94e6-76fd0877436d" name="long sportEventId" direction="In" isUnique="false">
+                  <elementDefinition Id="a5ae936f-cfb1-48f4-9dd9-2000e7d695ae" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7966db38-927e-40fa-b8d5-6ab0f3174f91" direction="Return" isUnique="false">
+                  <elementDefinition Id="d9b9ba7e-6836-4ef1-9ba8-9a542cb69327" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7320a149-4c19-45d2-89ec-f349375b85b5" LastKnownName="List&lt;Comment&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fe200d10-29fa-4fb5-8411-3a16650a7921" name="CreateRecommendation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="88ec2440-c94f-4aad-b1cc-67cc9458bfa1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d71b5df9-1fb5-4bfa-b9c5-e97909e80516" name="string why" direction="In" isUnique="false">
+                  <elementDefinition Id="2def8712-a5e3-448a-8952-c33c62a87ce8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="32d425e0-6a12-42c0-a1ca-81c4851d69ac" name="List&lt;long&gt; listUserGroupIds" direction="In" isUnique="false">
+                  <elementDefinition Id="25ecba61-b494-4fe4-accb-607feba287d5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f009b87b-504d-4437-8538-da1d1f529e76" name="long userProfileid" direction="In" isUnique="false">
+                  <elementDefinition Id="0aab7ad5-4ba4-400d-b881-963b3c1eedcd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fc72acb2-498e-4f56-87aa-316a92523a31" name="long sportEventId" direction="In" isUnique="false">
+                  <elementDefinition Id="98aaf08c-e5d7-45ec-ad1a-b00fee66e3de" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6a45da55-1ded-47b0-9f3d-6a6c115454e5" direction="Return" isUnique="false">
+                  <elementDefinition Id="35b3d6d7-1862-4bda-bd31-4631a62f5eff" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="708f099b-5c82-4c1b-89c1-fed87d756e4f" LastKnownName="Recommendation" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="53591aa9-2659-4a06-bae8-5335bae4366b" name="FindRecommendationsByUserProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c936e1c-c773-43b7-80e9-408d9c16d548" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0eb7eef3-b7c9-47d1-8391-f3c2adb9dc00" direction="Return" isUnique="false">
+                  <elementDefinition Id="0ef774da-91f7-415a-a010-aea96fd7c2e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="277079e4-5be6-4ad1-8106-6e5bad6d4b9f" LastKnownName="List&lt;EventRecommendationDTO&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a6f413a6-3891-41da-b0f0-cd00c24d971f" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="b5baae54-c332-4d6e-86e0-6c5f23eaf0b1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a7bfd46c-f0eb-4cf5-9962-bbe336de5c5a" name="FindAllCategories" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="93f26246-55f9-4eca-82ef-3abb6fe33081" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6f3207c7-5d36-4345-a2e9-b7a462ee7d5b" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="ae7c736a-73e8-4a57-b25d-67deeb903a9b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a3cea21b-8807-4f09-93ff-14f75dee6795" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="5b167852-cff0-40db-bb68-486eb4558294" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c350b5f2-7361-4e21-abd1-3fa7d9344796" direction="Return" isUnique="false">
+                  <elementDefinition Id="7c00b2db-80d6-46d2-b1f6-acce92a26d09" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2f7f3dae-800a-42b6-8e5b-0ddba417a4f7" LastKnownName="List&lt;Category&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dfeb70fc-fa55-447e-90dc-cc32c0bc00bc" name="CreateTag" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3006ae3e-fc82-4d6f-94fb-6cffecf564c8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d844aa00-d012-4618-8711-aae4209248c7" direction="Return" isUnique="false">
+                  <elementDefinition Id="472fb857-b918-4397-b2d2-827901c8f631" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ec21503b-10aa-44eb-b32e-814d2f1e3cbb" name="List&lt;string&gt; tagsName" direction="In" isUnique="false">
+                  <elementDefinition Id="cbabeee7-1265-48fe-a1b3-ee569bcd00af" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="635ec2cf-a51f-4611-aab9-4d25b708d5d9" name="DeleteTag" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e4cb7ce1-5da5-4a73-b967-69769c26f7e9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2cedaad8-f34e-4e41-b5b9-b81866dae302" name="long tagId" direction="In" isUnique="false">
+                  <elementDefinition Id="65c25169-1ee1-4a87-8774-c1505e9702c0" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3b33c76a-374e-4729-a3db-1532e7483767" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="363fc8ed-fef3-40a7-9369-146aaf748748" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="11e77fee-49dd-4443-a6a8-63ad1040c87d" name="GetNumberOfTaggedComments" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6e43cf03-5607-48ef-85d1-107243df7647" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b74dcf87-c715-4ddd-95bb-9ef5f724fba5" direction="Return" isUnique="false">
+                  <elementDefinition Id="893b84c7-4396-4e43-80ff-d34499eb617d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0e5ecdb3-d2e4-4142-ba69-f7df48320a3b" name="long tagId" direction="In" isUnique="false">
+                  <elementDefinition Id="7d2055c5-288c-445f-9b6f-129d4af18e82" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cb1984d5-6f43-4ff1-afdc-7057e1dcc3c2" name="GetTags" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="22783def-e20d-454f-8069-06871cb4b0bb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4f07054d-e4ef-46b3-ab9c-ab1de2285aeb" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="430c3406-c4e7-4417-8347-e586ba1cc105" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f2a2307b-05ab-407b-a5fc-120192f5be0b" direction="Return" isUnique="false">
+                  <elementDefinition Id="9aa584f7-99d3-4d1c-ba72-ba8993b7f00b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="71bf98e2-e9f5-46c6-a8b4-057c773ab40c" name="FindAllTags" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e2417a9-20cc-4d07-86d1-0d7fc4ce92f5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a094d5fe-8cc1-4c8b-a5c8-59723cb6ddf8" direction="Return" isUnique="false">
+                  <elementDefinition Id="e6f8e9d8-515f-4946-8b4b-b624340053aa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a5d5e7c3-dcd9-4499-9dd0-a64591acb6d9" name="FindSportEvent" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f4e92ce9-ce27-47ea-8a38-18b1ba345f82" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="70a489be-8a14-43ec-9e7c-dcdb7dd5c14e" name="long eventId" direction="In" isUnique="false">
+                  <elementDefinition Id="580cc8ea-1cc9-49b3-975a-63bb88c88502" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed8a1d36-9dbb-49da-beda-35f736120021" direction="Return" isUnique="false">
+                  <elementDefinition Id="862db9e9-ccf2-4003-88e9-a30ffdebacf3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a53e4fbe-68fb-4fe2-b7ac-5f2b4444b2c3" LastKnownName="SportEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b0ae2d50-f5af-4e84-a449-47a3a3c64361" name="FindByKeywordsCategory" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="69f7838b-f00f-440e-a638-a28f7abdefa7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b0e9d8d1-3411-4775-bd14-9780cd770094" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="46c743ed-2f46-4deb-b184-58fc7914bc14" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b86960be-aa4d-4e32-a6a5-27c2f32f4ea7" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="7a12daba-df38-4ee9-8111-47381da1a6c4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8df7dc39-7867-4570-a1ae-2687e68e724e" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="91dfbaa8-b3a4-4af1-8bd7-c91dbe915f2b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f288d192-ff00-4599-90c5-bdc3db7a5515" direction="Return" isUnique="false">
+                  <elementDefinition Id="8a9119ea-228a-47e1-86e1-9b4de46fb5ca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be680cd3-2c93-43c9-81b8-cd395769f8a3" LastKnownName="List&lt;SportEvent&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="818ac5fd-1004-47eb-a300-dc821393c501" name="GetNumFindByKC" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ccc6e5a-e081-447b-9331-fe01f428a65d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="22b79e63-3eaf-4e48-8cae-db1435c1f087" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="61eb08b2-797d-4836-88cd-847c1fb762cd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e31b1f6a-eb5f-4090-88dd-020926b6cd88" name="long categoId" direction="In" isUnique="false">
+                  <elementDefinition Id="88c16f7a-9567-4a08-8197-45f82ffd43b5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a4a077c2-2ca2-48f1-b228-8058b69fb14c" direction="Return" isUnique="false">
+                  <elementDefinition Id="83597d7b-9bef-42dc-a63a-251ced70b8db" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="591b6b8a-4e2c-4ab6-9028-3a4aa3a053ac" name="GetNumFindByK" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4758ef6-da21-43c8-88aa-92eaead210a1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="333279de-6f12-45ab-ad73-8abcf474c373" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="b735f02f-edc0-4b92-ba55-06b57c897f89" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="caa2d76b-60fc-4f88-bbe4-8b87381a2ff1" direction="Return" isUnique="false">
+                  <elementDefinition Id="5766da1e-7b74-4099-b438-8aee15024adc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e4754c9b-7b7f-47c0-b2d1-369cbe372e19" name="GetNumCategories" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f78a35d6-5138-484a-afdb-c808eac20745" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="20cadc18-53e5-414f-a868-dba22ccfb558" direction="Return" isUnique="false">
+                  <elementDefinition Id="2bde3dd3-f8c6-4185-a39f-e00ee74458b0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="58923d14-ccb2-4502-90e7-25fc2d987780" name="TagComment" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="41b71b18-ea05-4a69-bd68-2bd2a10139ca" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1c7528db-a49f-4b7b-9169-232fb7c5fd3b" name="List&lt;long&gt; tagsId" direction="In" isUnique="false">
+                  <elementDefinition Id="6e8757df-05e2-4499-99c1-6de929e6480b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a9e9eb75-c075-4cac-8cec-91c4d8a6e958" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="993da9d5-b83f-439c-b30c-3fa9fe9e8ee1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e4a1c6ae-9e91-4548-b198-d8dcadaf9d22" name="DeleteTag" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb139445-983d-49a1-aac5-ac506485c366" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3dfa63c1-9918-4466-8a6b-13d9e5ff9909" name="List&lt;long&gt; tagsId" direction="In" isUnique="false">
+                  <elementDefinition Id="efe69a9b-e779-4182-94a7-426959c9c158" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0a351ea8-3fd8-4d4f-b554-c4785e148a23" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="4dc4562a-39c1-4c09-b7d1-fe9492dfa721" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="98e9615a-8ac4-459e-b025-91367c07b333" name="FindComment" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4991d69e-d0cb-48b3-90ec-96b5fe8900fc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0dee5f18-567d-4948-bbed-3c0503fbe2d2" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="5fe7ea63-37d0-437b-805f-8563b5f8e7d7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b3bc204f-5763-4d72-a6a4-fb98f4c8f578" direction="Return" isUnique="false">
+                  <elementDefinition Id="6535fde6-2c76-4fde-b953-1cbee7c6bba9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7118204f-7920-4d68-8187-a78c631bdc85" LastKnownName="Comment" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="46826817-1f0f-423d-9337-8246f9c5f015" name="GetCommentsByTag" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="58436180-f55a-49d9-beba-af576f5526d6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="876f88d7-4aef-4137-91c6-eed2dcb67049" name="long tagId" direction="In" isUnique="false">
+                  <elementDefinition Id="3bf5131f-75a1-4590-81c7-e0b7dc8df3fb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="afc13510-d790-4828-9d00-e1c99971c3b9" direction="Return" isUnique="false">
+                  <elementDefinition Id="d7b725d4-75ff-46e2-8159-59a4e93c7275" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1284f24-f714-4e98-af19-62710b2b6b3b" LastKnownName="List&lt;CommentEventDTO&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e941edca-c94b-4dca-8fa9-20a68a1b2835" name="FindPopularTags" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e979085-5d3f-4c70-9844-7609d9086b02" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7201fcb5-2f0f-499b-8606-0224bf5f630b" name="int numTags" direction="In" isUnique="false">
+                  <elementDefinition Id="0482b59c-b915-4f00-a7d3-14750f82954c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f727bb23-8b9f-4f9b-81cf-874fadfdec71" direction="Return" isUnique="false">
+                  <elementDefinition Id="eca7568c-f413-488d-99de-193d0efa3cc4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="510cd1e5-2c70-4f42-8991-e61dea1f1a27" name="GetTagByName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e05deb1-bbaa-4368-8bb0-b05f562274e1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="793756ac-ff44-49b7-94bc-f5b1ad129d5a" name="string name" direction="In" isUnique="false">
+                  <elementDefinition Id="6f161112-6293-4422-a5db-e094db3e0b0a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="49806098-ecfb-4ce4-9284-c1b2fdbd9d3d" direction="Return" isUnique="false">
+                  <elementDefinition Id="2a7e6977-6b37-4131-bdfd-8b4dc46abb84" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4884d873-7ef4-4cef-b8bd-52f351c2f442" LastKnownName="Tag" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="be680cd3-2c93-43c9-81b8-cd395769f8a3" name="List&lt;SportEvent&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;SportEvent&gt;">
+        <elementDefinition Id="a4d28d27-0789-4ddc-81ea-160d1c226b9a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7118204f-7920-4d68-8187-a78c631bdc85" name="Comment" isAbstract="false" isLeaf="false" cachedFullName="Comment">
+        <elementDefinition Id="985b4c57-cf9b-4973-a662-5526735bf2f4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7320a149-4c19-45d2-89ec-f349375b85b5" name="List&lt;Comment&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Comment&gt;">
+        <elementDefinition Id="a7ed58a1-310c-4992-94c0-02fbc41615d6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="708f099b-5c82-4c1b-89c1-fed87d756e4f" name="Recommendation" isAbstract="false" isLeaf="false" cachedFullName="Recommendation">
+        <elementDefinition Id="cb0740f5-3bba-4c67-bc45-0a5bde526279" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e09a70e8-7d2a-433d-b6ec-0277617107ba" name="List&lt;Recommendation&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Recommendation&gt;">
+        <elementDefinition Id="93f6fa49-79a5-428e-83ad-62bccccafcb8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2f7f3dae-800a-42b6-8e5b-0ddba417a4f7" name="List&lt;Category&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Category&gt;">
+        <elementDefinition Id="4dbec9c3-8d70-4a5e-8800-7a2474084411" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4884d873-7ef4-4cef-b8bd-52f351c2f442" name="Tag" isAbstract="false" isLeaf="false" cachedFullName="Tag">
+        <elementDefinition Id="af1e015b-a6d8-4ba6-87ed-b28c2eeb8fd9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="55b4ddea-a186-472e-8dac-bbee2f545908" name="List&lt;Tag&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Tag&gt;">
+        <elementDefinition Id="045b7f26-e08e-4b7a-bc51-b5e0794e1d95" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="bd086b6f-052e-4483-8fc1-454c795728db" name="IUserProfileDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="28575464-3488-4488-8f05-2107887f1f92" />
+        <ownedOperations>
+          <operation Id="4645a763-f7c0-413f-b56c-0d326d70472f" name="FindByLoginName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6c10a231-211a-425f-99d2-4c55e8931e99" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0d21ace6-b334-4c7e-8819-993820e07af5" name="string loginName" direction="In" isUnique="false">
+                  <elementDefinition Id="59d5edb1-b640-4087-a847-c4517f4459cb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81ddf921-feab-4258-a9bf-876c6ea0716a" direction="Return" isUnique="false">
+                  <elementDefinition Id="9cb9dd2d-163d-44ac-a607-0de430db4a17" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="602caa5b-3b70-4552-b1be-07200977e6dc" LastKnownName="UserProfile" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="602caa5b-3b70-4552-b1be-07200977e6dc" name="UserProfile" isAbstract="false" isLeaf="false" cachedFullName="UserProfile">
+        <elementDefinition Id="fe4bdd8b-af26-4528-9ee8-98940fdf3a5d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e09877fd-de70-467b-9e51-6361729b8b13" name="IUserGroupDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="057f8353-c282-4ff6-aad4-82c78137e1c5" />
+        <ownedOperations>
+          <operation Id="461bef37-0ec4-47b2-9099-aee6f45fa7f9" name="FindAllUserGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40d548fc-7328-4c52-97bc-0f4fec69bd44" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1bdcca5-5d4c-4a89-846e-21245db685d5" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="036f25e0-d26d-4845-b55c-acaeab6ed764" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e390d741-93ba-4cd0-85e9-77ef4ce5c22d" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="3980ac30-36cc-4e23-8884-90ea008755b5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2dc72eaa-99c6-41f7-9953-2e64584a2fcb" direction="Return" isUnique="false">
+                  <elementDefinition Id="1e9d7627-1d73-478f-9edb-6eedc690b997" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="24c2c1b6-e559-4173-bb67-76ce26a50b60" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="aaa99566-6422-423e-a3e7-cb0b55e82ae1" name="GetMembers" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5c2ce0b0-8899-4a27-b8e7-175130661673" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c46c9e3c-9c7e-460e-921e-a51da389a05c" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="bea25927-7736-4506-80b8-0403d4b0bffe" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="54a01275-c680-4615-a331-224bca1b1e43" direction="Return" isUnique="false">
+                  <elementDefinition Id="c62f555d-55e1-401d-88f3-60f4a45d1df1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="032e674b-e88b-413f-bd58-31ce964ced85" LastKnownName="List&lt;UserProfile&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="315b95b5-3635-4654-859f-a160b5132574" name="GetGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="25987815-b0cc-4ff1-a702-676a177cfdd4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3ae150c2-6eca-4670-af99-ed8fd7663afd" direction="Return" isUnique="false">
+                  <elementDefinition Id="98faab98-8c4e-49e2-a475-f874b3f7da89" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="24c2c1b6-e559-4173-bb67-76ce26a50b60" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5ad375b7-89eb-4856-9942-6a5b534f36f4" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="d5735166-d8c3-4790-9feb-a79e167c6a8f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ddc4132a-2c92-43ea-8f5d-15a51df44b91" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="69d6593f-6bfb-4587-9bda-28a7b3175b09" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="41d86083-7662-4929-9f75-3b06a572c6e8" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="df6ca89d-7762-48b0-bba6-e5cb48637163" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="59c93ee1-eb9d-48a3-89c0-05504301939e" name="GetNumberOfGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b5d81f90-e262-463b-8ff1-8020321db305" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f842b22-2d96-48d7-a81d-411ca4828c5d" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="4aa29785-9e00-4b33-9b77-e2c770ac72c7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f4dfd1ec-f93a-46c0-85ae-2b819b236960" direction="Return" isUnique="false">
+                  <elementDefinition Id="7f976fe9-c24b-4644-9f9d-c74bad073768" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cb80eea2-4b89-4ec3-94e5-ba8ae32241c6" name="GetNumberOfAllGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d53f4e55-0421-4187-aff5-55ab4ede9c95" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="977a5944-840c-4cff-b136-4ff9619bb503" direction="Return" isUnique="false">
+                  <elementDefinition Id="b000ce52-9db4-4ab4-855f-927b54a1ae9e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0bb368c9-240a-4cf5-b6b4-160de5545243" name="FindGroupByName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="301c08e6-beca-4610-bb78-9bfbe486a092" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a164b56f-b8f3-4ac2-bc04-ae6365111209" name="string groupName" direction="In" isUnique="false">
+                  <elementDefinition Id="eeb95db2-813c-40fb-9953-50431fa71240" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e50815b-0058-4956-b639-be7c569ac9af" direction="Return" isUnique="false">
+                  <elementDefinition Id="f0efc9ca-0a32-46c2-ad7c-6c205b605d52" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8e4bd91f-86f5-4848-8a23-484023216152" LastKnownName="UserGroup" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="24c2c1b6-e559-4173-bb67-76ce26a50b60" name="List&lt;UserGroup&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;UserGroup&gt;">
+        <elementDefinition Id="5debee4f-55c7-41dd-9c57-8eac77764669" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="032e674b-e88b-413f-bd58-31ce964ced85" name="List&lt;UserProfile&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;UserProfile&gt;">
+        <elementDefinition Id="fe072ad3-5fcf-48e0-8eb2-4a500b4ab23e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="678b322d-5f7c-4b16-994f-3e98a2a0e07a" name="ICommentDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b2cb6566-37d0-446b-8e55-3cdf5ca2a12e" />
+        <ownedOperations>
+          <operation Id="fb3dca39-bd06-4245-9284-1cde488e083e" name="GetEventComments" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9fa1815c-a8da-4750-beef-536900c94317" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="16d74726-732e-4656-bd8c-bc45df51b371" name="long sportEventId" direction="In" isUnique="false">
+                  <elementDefinition Id="5e807b87-b1e8-4e29-941c-414479ee4a88" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c0f7f74f-fe70-4601-b56a-2aa65b71ba61" direction="Return" isUnique="false">
+                  <elementDefinition Id="5691dd9f-c49a-4f37-b017-f27deee3d674" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7320a149-4c19-45d2-89ec-f349375b85b5" LastKnownName="List&lt;Comment&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2053b399-f7df-4244-9b86-3f8831f9fdda" name="GetTagsByComment" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2c789d9-71cb-4e07-9d19-d2b0bb0b53f5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8fa05c37-eced-4a1e-9ff6-0edcaf883c61" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="f07b96f1-3736-446e-b009-e3fcf845341b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="58148684-18f0-4679-82d4-6cc7425ba8e2" direction="Return" isUnique="false">
+                  <elementDefinition Id="45647b61-9b78-4432-931c-d8926f2ead31" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7eb532ed-8993-443a-bb23-a0b66fc74e5f" name="FindUserProfileByCommentId" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f9b53ae8-d3f2-45e6-b6d3-8b337bfb0989" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fabeb544-6697-45bb-9e70-f5930db6c932" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="fb7c3a6a-b2f9-4d0d-af9a-fded3746c29f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="02d08e15-1092-4497-a229-7d8af48a1de7" direction="Return" isUnique="false">
+                  <elementDefinition Id="c5585778-4aa4-46e8-8a3b-0eb3eeadcf76" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="602caa5b-3b70-4552-b1be-07200977e6dc" LastKnownName="UserProfile" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bf769962-4525-4843-8f60-7568349b99d0" name="FindEventByCommentId" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1d8e9187-449a-48a8-867c-6768c82f2314" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d60922ef-c872-42f1-9ba1-88d0a354602b" name="long commentId" direction="In" isUnique="false">
+                  <elementDefinition Id="df767115-581c-4b6d-ab91-d50f8aed8fd4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="84ff7b61-e1da-4357-8dc4-e63be78f972e" direction="Return" isUnique="false">
+                  <elementDefinition Id="8a26ec41-0268-4b6a-b5f1-1166dd97a5e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a53e4fbe-68fb-4fe2-b7ac-5f2b4444b2c3" LastKnownName="SportEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="d705ebc4-b898-48b1-9d27-8a92e9a1ea49" name="ISportEventDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a197499e-bcfc-4c03-8911-c0e92b1f34c6" />
+        <ownedOperations>
+          <operation Id="e3b0e3cb-85ad-4f5f-a348-0ac0fb0d7603" name="FindByKeywordsCategory" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eefa50b6-9064-4c19-ab53-8b027927149b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c392ac1e-a1e3-48f1-901f-c2bc8479f20e" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="6a4a0b9f-f882-4182-ac57-ba0ab52f2427" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="adfebdcb-3a08-4d03-b8f3-d9a4b03dba24" name="long? categoryId" direction="In" isUnique="false">
+                  <elementDefinition Id="64569bd5-c156-430d-8dec-7480e6d06aa3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e58a72a2-f26f-43ab-8a1c-a9be3ebf319a" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="b929d401-981d-45e3-8760-49b69c7006c5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f7128dac-6fce-451f-8ed5-18aa68380dce" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="b0c65e9a-1cdc-4f9e-8faf-c9e8d4bd0efc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86a507e1-036b-450e-8ddf-df065a2f9fa6" direction="Return" isUnique="false">
+                  <elementDefinition Id="067f9410-cca9-44e4-bda0-6c8c4b3fc455" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be680cd3-2c93-43c9-81b8-cd395769f8a3" LastKnownName="List&lt;SportEvent&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0911fbc1-bdeb-49ae-b152-1ffb4b0e55a9" name="GetNumFindByKC" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4527299-8152-41a2-b882-93d5173b38a7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="83415cf7-742d-430f-b494-c80d47aaf268" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="9112a0d6-cf55-42e8-a356-a825563d8088" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e7bad350-68ce-4b58-87bd-4d2f10de743a" name="long? category" direction="In" isUnique="false">
+                  <elementDefinition Id="71581b7c-cba5-4c5b-a509-46bc78735bb3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f4dafe7f-52a6-44f1-af3c-3aec1cf018aa" direction="Return" isUnique="false">
+                  <elementDefinition Id="f9f61e15-bf0c-488d-8a0a-a689bf6e3895" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="505729c6-c947-49e7-a94c-c726f4d6fd36" name="FindByKeywordsCategory" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e773d0e7-483d-4d20-8213-09bc5d3f0f40" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c816b466-4782-4934-bdbb-92392343fa27" name="string keywords" direction="In" isUnique="false">
+                  <elementDefinition Id="98a9ca4b-5797-4ca2-88da-4670add3cbeb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="38a0ce31-3c57-4947-9565-9899f6f34f8a" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="bbc44d08-4a39-4525-8e04-fb9f4edf6457" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c2471cb7-2b9c-4dd7-b511-a4a3af7a69dc" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="4ba70f25-85dd-4e2e-9f49-f903fea3dc08" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="130f454d-b92d-46bf-b131-a79208b8af64" direction="Return" isUnique="false">
+                  <elementDefinition Id="29f693e5-c1c3-4403-aba6-ae65ae4a798a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be680cd3-2c93-43c9-81b8-cd395769f8a3" LastKnownName="List&lt;SportEvent&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e3764506-67fc-48d9-a8e3-a0d51f8aa335" name="IRecommendationDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="09235075-9d0c-4684-991f-1035f870a624" />
+        <ownedOperations>
+          <operation Id="235809e3-2be7-4f06-b48d-8280fda9b4e5" name="FindAllRecommendations" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e6d24016-b52f-4cdd-9740-c6b2f8b91eb1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3a8adfd2-0325-43d1-ad0d-064fd41ca583" direction="Return" isUnique="false">
+                  <elementDefinition Id="b1e1f886-52f5-474a-9423-b4df24edd163" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e09a70e8-7d2a-433d-b6ec-0277617107ba" LastKnownName="List&lt;Recommendation&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="34c404cb-941d-4701-a71d-b2e7deaad6f9" name="FindRecommendationsByUserProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11a239c0-4747-4d99-beae-92d7b8cd9758" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="df7b8c6f-9191-41b0-a331-675f4ef50655" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="0934da45-09b9-4f74-9da0-12aada02ed75" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="075af12f-7794-422a-8819-f7e2a4a1d5b6" direction="Return" isUnique="false">
+                  <elementDefinition Id="1e958515-5762-4d03-b84f-fa4fa45f92d6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e09a70e8-7d2a-433d-b6ec-0277617107ba" LastKnownName="List&lt;Recommendation&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="289b4dd6-d67b-4260-842a-2f52fc237804" name="GetNumberOfRecommendations" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d8cfc74-3956-4a27-9ad5-674c0c973d16" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2e66795d-931e-4e9d-9ac6-68e494d3fb8e" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="b99314b8-127e-4017-a463-5cb12fbddf09" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cf75c59a-37e7-4394-bbd3-23f94ceeee7d" direction="Return" isUnique="false">
+                  <elementDefinition Id="b58e8a9f-95be-4a68-80ce-6832119826bc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d8f1ad13-9e3d-478a-83de-e21a19f40603" name="FindSportEventByRecommendation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f04f82d0-b431-43a3-832e-9be52c3e5980" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1d5602f-63a3-42d7-8249-0c43b19b571e" name="long recommendationId" direction="In" isUnique="false">
+                  <elementDefinition Id="76947daa-0426-404e-bc4d-e718f1da8044" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13459f07-0a28-4894-a49c-2d1b684cceb8" direction="Return" isUnique="false">
+                  <elementDefinition Id="9d1459e2-86e2-4d2b-95c3-322d89ab7cfc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a53e4fbe-68fb-4fe2-b7ac-5f2b4444b2c3" LastKnownName="SportEvent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6af5493f-4ac2-44ab-b370-ed76e05e0d34" name="FindUserProfileByRecommendation" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bfb67b42-b3a0-4d19-a67a-1a1b6f66288a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0db413b2-bda8-46b7-bf91-36201839db6d" name="long recommendationId" direction="In" isUnique="false">
+                  <elementDefinition Id="559c7d64-752f-411e-9649-269514c3cc2e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bc1916fb-4736-46d0-8f5d-c620972a00e0" direction="Return" isUnique="false">
+                  <elementDefinition Id="bbdb106f-6c15-4ed8-9925-d969d3ed54c1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="602caa5b-3b70-4552-b1be-07200977e6dc" LastKnownName="UserProfile" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e71fc5ee-36a9-4d1f-93db-7ce275b1d042" name="ICategoryDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5f69efc9-1b5a-44ad-ac7c-25f36279f447" />
+        <ownedOperations>
+          <operation Id="e3e95d1a-3bda-408b-8d4b-8b56c947ccc9" name="FindAllCategories" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="18306f41-c7b6-4dc8-9dc0-720c33508366" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fc7305fd-715a-4778-a6b9-a22ffb3450b9" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="ac48a164-2b93-4d0d-900c-c390b5886dd6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="daf34337-a964-4754-963e-0d18be3ca6f2" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="e044d164-e55b-466e-8613-e3dbcc4660dc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="622b0882-d225-4aca-bcbf-f5a15b64cbab" direction="Return" isUnique="false">
+                  <elementDefinition Id="4b91cb36-d4ce-4246-9a76-66eb3f748d01" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2f7f3dae-800a-42b6-8e5b-0ddba417a4f7" LastKnownName="List&lt;Category&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f5ede08f-8327-4783-8d13-cbdd7526c316" name="GetNumCategories" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11806981-7a7e-4985-85db-5295b6958049" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7d2c76ca-a18b-4cf5-b7ae-81eb782c1f35" direction="Return" isUnique="false">
+                  <elementDefinition Id="26cd09fc-fe91-40e8-abd1-d60a8df0cad4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="c881d97c-6cf7-4ebb-9a76-d82296b893e0" name="ITagDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c8d37f02-8d85-4778-8e81-66c487d1d221" />
+        <ownedOperations>
+          <operation Id="69d74df8-9c03-4d92-ab23-a606d0637a44" name="FindAllTags" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e8d08b8-5ace-45ea-ab06-408d6eb9f422" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8f61d159-97e9-41fb-be76-547f93a9030f" direction="Return" isUnique="false">
+                  <elementDefinition Id="2437f74d-207e-476a-bbda-4c7398bbe348" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1e117b9e-fc32-410c-874e-911b499d9f40" name="FindPopularTags" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="db88e317-51fb-4a4b-b0ab-3b930c11a8b3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="84835b3d-cb12-489c-a905-3a0e10c7b1c2" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="2bcc5cad-fffa-4423-b2e5-5f67e2b86886" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="29b30048-c037-4add-975a-6660ec28d21e" direction="Return" isUnique="false">
+                  <elementDefinition Id="f5e23bae-3391-4e37-8ff6-bfba719b823a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="55b4ddea-a186-472e-8dac-bbee2f545908" LastKnownName="List&lt;Tag&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6b3629fd-a2ee-4fb9-b649-5db4f8f0a636" name="GetTagByName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef6aa1a4-edd0-4810-9425-821ff2355c02" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="05283976-c475-4790-9a29-5aa384eb1c95" name="string name" direction="In" isUnique="false">
+                  <elementDefinition Id="99cf4021-a9d6-4bfb-9597-cdca0a3e783c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fddb7b76-509d-46c8-ae1a-3fd21334e74e" direction="Return" isUnique="false">
+                  <elementDefinition Id="1c7deb7b-43a6-41ec-90ee-b41456528e8a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4884d873-7ef4-4cef-b8bd-52f351c2f442" LastKnownName="Tag" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="217902d6-b8c8-49c0-8267-df02677baf7f" name="GetCommentsByTag" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06b0af1d-bd14-4624-be25-7edf9727950b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="670195b8-12d3-4e71-b58e-58b98cc49175" name="long tagId" direction="In" isUnique="false">
+                  <elementDefinition Id="5a43c6a7-3d97-4ef2-b391-9f0db64442f7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="680b7709-9afc-498d-b20c-bad10ee236d3" direction="Return" isUnique="false">
+                  <elementDefinition Id="da6d5d11-1166-47f9-b34b-e8f3889213e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7320a149-4c19-45d2-89ec-f349375b85b5" LastKnownName="List&lt;Comment&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="a53e4fbe-68fb-4fe2-b7ac-5f2b4444b2c3" name="SportEvent" isAbstract="false" isLeaf="false" cachedFullName="SportEvent">
+        <elementDefinition Id="b31571cd-25ef-49f2-a529-e9a5b365dd56" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b5a117d0-7a3e-4ca9-b400-0b18e843c8be" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="e0c11eb2-9f1b-40bc-8dfc-563f5db57c0d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8e4bd91f-86f5-4848-8a23-484023216152" name="UserGroup" isAbstract="false" isLeaf="false" cachedFullName="UserGroup">
+        <elementDefinition Id="b564903c-9477-40c9-93b8-4f83b5a6a578" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="277079e4-5be6-4ad1-8106-6e5bad6d4b9f" name="List&lt;EventRecommendationDTO&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;EventRecommendationDTO&gt;">
+        <elementDefinition Id="59e936a3-bc60-4520-9005-118c055cf375" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b1284f24-f714-4e98-af19-62710b2b6b3b" name="List&lt;CommentEventDTO&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;CommentEventDTO&gt;">
+        <elementDefinition Id="b1a61708-bfd8-4dd9-a68d-426e9636e020" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="bf45b3d4-1140-4044-9201-f4cab68ce50b" name="SportsNowModelingProject">
+    <elementDefinition Id="7579d2f5-5ddf-42a7-9869-dee391febcde" />
+    <profileInstances>
+      <packageHasProfileInstances Id="45140a41-1e01-49d6-b2eb-8053e32eebd0">
+        <profileInstance Id="a57533c5-ed3f-4785-9fb6-c9b601bb275c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="039cb6f6-5a77-4dd9-9b15-74af4e6b10e5">
+        <profileInstance Id="236d23c8-4405-4173-8d61-6b9cb3aa5a02" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

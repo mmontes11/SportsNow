@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6d2577eb-d823-4c91-adaa-4e46ee0e64fd" name="CD_2_2_UserGroupService" linkedPackageId="3d0076b2-a045-403d-a67e-ac14da0963c4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="dd3a4d96-2a47-4661-bfc5-1b3062bb3e20" name="IUserGroupService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7f87210e-8262-4bd7-a8a2-38be23df90c2" />
+        <suppliersInternal>
+          <dependency Id="2e48e901-cd9c-4dc2-a6cd-cd45764c8df7">
+            <interfaceMoniker Id="da4116c2-6161-4498-8c45-4875953eb34e" LastKnownName="IUserGroupDao" />
+            <elementDefinition Id="1822c52e-7a7e-409d-8303-adda75337cab" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation Id="cf21cb16-bec0-4b99-b993-f44cee62df12" name="createUserGroup" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="13a81a2f-7f46-492b-8e7d-66c0406e7305" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9c620663-1ddd-43ef-bacc-d886dfb657e7" name="string name" direction="In" isUnique="false">
+                  <elementDefinition Id="1d76eea2-63b2-45dc-8095-55d85ccdf397" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0046fffa-bdb3-4af4-9414-57c8b272b2e2" name="string description" direction="In" isUnique="false">
+                  <elementDefinition Id="3d9b0ec5-d852-467e-8cf2-8da5c9b2eb7b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bcb0040e-ee8e-4195-8422-cd1ea5f4c3f0" direction="Return" isUnique="false">
+                  <elementDefinition Id="29b9070d-6d1d-4eee-ab1f-a0afa9657297" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c1707000-193c-4ab7-9901-666be32e22a5" LastKnownName="UserGroup" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="20bb86d9-142f-48d5-8eff-b71ae8292035" name="FinAllUserGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="124a2215-a7b7-4f06-aa45-bf5549c7ff16" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="24afe1b3-81b3-4a73-9038-50125e1d3121" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="ccf71fd6-4ef1-4a7d-96df-bc3c3ac818cf" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="acbfff91-2f4c-4c6c-b0e4-173337797cb0" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="66c6d546-cdc2-4720-bd9a-dccaa1c47e27" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="08cabcd8-63a4-4b90-8918-ada97a6b4c06" direction="Return" isUnique="false">
+                  <elementDefinition Id="a5449675-36c2-461b-9831-e15dcc2b6508" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8458bf08-0a89-4d87-b130-e676489f657f" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="44ddcb65-f6f7-467f-bb25-4f728340205e" name="GetNumberOfMembers" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e3a2cbb-8a55-4440-9b6e-1cf08c0142ea" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d1869f83-4d83-4029-a21f-e5b7846533d8" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="79361b8b-0742-4491-b1f0-5a6ff5cfe3d7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e7f08fcb-387b-44a0-9e35-5caa102458da" direction="Return" isUnique="false">
+                  <elementDefinition Id="0f6403cc-b6c1-4e32-8493-de1e95dce265" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3538b267-43fd-4946-8305-1bed8c5cc916" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1996cb22-e2d8-4454-b5cc-d6abe3a74de6" name="GetNumberOfGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0c1f7f2-637b-4d22-9094-8fd6cbddbdf5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1570cee5-2a1b-43eb-9f74-8e1ea3842183" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="00a1b6c1-c0a2-4b1a-bed2-8e9bb05abcf8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="eb38a49f-25ef-42d3-9ad4-3520d2da523b" direction="Return" isUnique="false">
+                  <elementDefinition Id="b94fd031-660d-4ba0-8e7a-2176ad70a51c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3538b267-43fd-4946-8305-1bed8c5cc916" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="30f94bea-cd1a-4211-a314-3f2bbe82d360" name="SubscribeUserProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2cf816a5-efda-4f0f-b837-2068edd7b7b1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b76b5acf-98c6-4d7d-aa1e-6e93a2ffe866" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="352b5957-1369-491e-bd7a-3b7d36c27bfb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1ce0b13-1d5d-4950-b63f-aa42ba75cc8d" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="b7e9579e-6f87-4eee-a926-787edc797e62" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="55c97a7f-6384-429d-8ac9-48814cf675ad" name="UnsubscribeUserProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28ebd4a8-1237-43b4-9317-5089aa3e5aeb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d5a91ed9-d80a-48c9-a483-0a96562b8d4a" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="514c7d71-f027-4de5-9672-3b0e7473e223" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4d416466-bf91-4ac6-b925-2c037713d006" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="a19e6a91-5e0c-4351-8572-5e293511543d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8cb16127-a9da-47de-a709-9047e4e33149" name="GetMembers" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5188bb88-a1f5-4fe1-b583-89e1e4d7587c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4f722b97-7e2b-4a62-980c-44c375dfd474" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="590b172d-978d-4da3-ac24-a2cd7875ee40" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5879fa3b-fe17-4cac-bc27-76200bd24acc" direction="Return" isUnique="false">
+                  <elementDefinition Id="6781251c-eafc-47cd-96be-0f5f5e5fbc9d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b50195e6-5356-4445-985c-ff8823ed887a" LastKnownName="List&lt;UserProfile&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="27665fb1-08e4-4220-ae59-9fadc5348f88" name="GetGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97978d33-a477-4729-be12-de2698b0f518" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad036d26-8778-404a-a434-4d58643fb90c" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="b4582101-a275-463c-b236-dd2f478d788b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5377f298-b73c-408c-971b-60a1c51c7bbd" direction="Return" isUnique="false">
+                  <elementDefinition Id="6d477f57-d71b-45f3-8126-04c35fdd9199" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8458bf08-0a89-4d87-b130-e676489f657f" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="003f0845-20c5-4d25-83d3-ff5daf59c753" name="GetAllGroupsInfo" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2235f920-a41f-41ca-b660-7dcf54b37af4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e98da290-04cd-4eda-86fe-2398aecdf147" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="529eac86-11a0-4726-a1a0-f010d1dad859" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86233219-40cd-4635-b41a-3222b0136213" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="4475fa3c-f0a7-4b55-8c0b-3b21d0fcb6bc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9d308a4b-3d32-4e6d-bf63-92d90c0feb8c" direction="Return" isUnique="false">
+                  <elementDefinition Id="75eecf61-5910-41cb-8492-1c55b0eb7309" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="52a67463-fb51-4675-af09-210c61399da4" LastKnownName="List&lt;GroupDTO&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="39644c3e-e1d2-4726-9787-0233675d6cfc" name="GetNumberOfAllGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b5d56605-c31d-451c-848b-2b7fc80d894f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="907f4d18-17fe-4732-979e-0e1184747f06" direction="Return" isUnique="false">
+                  <elementDefinition Id="a8a851a0-45de-4b6b-b941-af83d8f207dd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="78910e4e-3d9c-4042-aece-36b16f339a31" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c1707000-193c-4ab7-9901-666be32e22a5" name="UserGroup" isAbstract="false" isLeaf="false" cachedFullName="UserGroup">
+        <elementDefinition Id="b564903c-9477-40c9-93b8-4f83b5a6a578" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8458bf08-0a89-4d87-b130-e676489f657f" name="List&lt;UserGroup&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;UserGroup&gt;">
+        <elementDefinition Id="5debee4f-55c7-41dd-9c57-8eac77764669" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3538b267-43fd-4946-8305-1bed8c5cc916" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b50195e6-5356-4445-985c-ff8823ed887a" name="List&lt;UserProfile&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;UserProfile&gt;">
+        <elementDefinition Id="fe072ad3-5fcf-48e0-8eb2-4a500b4ab23e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="da4116c2-6161-4498-8c45-4875953eb34e" name="IUserGroupDao" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="057f8353-c282-4ff6-aad4-82c78137e1c5" />
+        <ownedOperations>
+          <operation Id="f0241317-1144-4f19-b213-fb9ee4c63a55" name="FindAllUserGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40d548fc-7328-4c52-97bc-0f4fec69bd44" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="569e4fa5-3a51-4189-9a56-106ad426d363" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="036f25e0-d26d-4845-b55c-acaeab6ed764" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7ef5f29c-b132-4b91-bc5d-1b3d0bd47c4b" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="3980ac30-36cc-4e23-8884-90ea008755b5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="62726a9a-c3f8-4a0c-8a41-8dd288f20f50" direction="Return" isUnique="false">
+                  <elementDefinition Id="1e9d7627-1d73-478f-9edb-6eedc690b997" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8458bf08-0a89-4d87-b130-e676489f657f" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6f6111c7-92b4-4891-a88b-80da1b57af04" name="GetMembers" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5c2ce0b0-8899-4a27-b8e7-175130661673" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a0aab7c4-6583-4566-a844-27b1928e626f" name="long userGroupId" direction="In" isUnique="false">
+                  <elementDefinition Id="bea25927-7736-4506-80b8-0403d4b0bffe" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="46f7274d-bec2-4192-884f-1f9cb1eb6e14" direction="Return" isUnique="false">
+                  <elementDefinition Id="c62f555d-55e1-401d-88f3-60f4a45d1df1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b50195e6-5356-4445-985c-ff8823ed887a" LastKnownName="List&lt;UserProfile&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bba629c9-1ca6-4456-957a-a8c3ff739097" name="GetGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="25987815-b0cc-4ff1-a702-676a177cfdd4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="723ef056-dc11-4cd9-a2b8-e71aab9fff26" direction="Return" isUnique="false">
+                  <elementDefinition Id="98faab98-8c4e-49e2-a475-f874b3f7da89" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8458bf08-0a89-4d87-b130-e676489f657f" LastKnownName="List&lt;UserGroup&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fa80b0f9-acef-459c-b73f-9587102e9010" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="d5735166-d8c3-4790-9feb-a79e167c6a8f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c6f7ea1a-3feb-4bd2-81ab-edbfa9aca59f" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="69d6593f-6bfb-4587-9bda-28a7b3175b09" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7f5105b4-7d3b-45b2-bba3-ae26a4e1304b" name="int count" direction="In" isUnique="false">
+                  <elementDefinition Id="df6ca89d-7762-48b0-bba6-e5cb48637163" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dcccc60a-fc58-4cc1-ae7d-dd9ac891a4c8" name="GetNumberOfGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b5d81f90-e262-463b-8ff1-8020321db305" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b48a69fd-b70f-4322-b683-5bbd456f8f7a" name="long userProfileId" direction="In" isUnique="false">
+                  <elementDefinition Id="4aa29785-9e00-4b33-9b77-e2c770ac72c7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b1c0996a-a45f-477d-be4c-e58ef357ccf4" direction="Return" isUnique="false">
+                  <elementDefinition Id="7f976fe9-c24b-4644-9f9d-c74bad073768" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="78910e4e-3d9c-4042-aece-36b16f339a31" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6aad6168-8460-4b49-b220-7e909658c27f" name="GetNumberOfAllGroups" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d53f4e55-0421-4187-aff5-55ab4ede9c95" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="692555d4-e0ec-4c88-8e24-d5f2600540bf" direction="Return" isUnique="false">
+                  <elementDefinition Id="b000ce52-9db4-4ab4-855f-927b54a1ae9e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="78910e4e-3d9c-4042-aece-36b16f339a31" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f1a8862a-f76c-49e8-8863-593008f59af9" name="FindGroupByName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="301c08e6-beca-4610-bb78-9bfbe486a092" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6cbfc495-9fe1-420a-82ee-8c34b7ac567f" name="string groupName" direction="In" isUnique="false">
+                  <elementDefinition Id="eeb95db2-813c-40fb-9953-50431fa71240" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6a1ed863-b270-4280-8ecf-aadae6975ef6" direction="Return" isUnique="false">
+                  <elementDefinition Id="f0efc9ca-0a32-46c2-ad7c-6c205b605d52" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c1707000-193c-4ab7-9901-666be32e22a5" LastKnownName="UserGroup" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="78910e4e-3d9c-4042-aece-36b16f339a31" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="e0c11eb2-9f1b-40bc-8dfc-563f5db57c0d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="52a67463-fb51-4675-af09-210c61399da4" name="List&lt;GroupDTO&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;GroupDTO&gt;">
+        <elementDefinition Id="5e968b25-bfe0-4a7b-b9f4-59f90b6adf6b" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="3d0076b2-a045-403d-a67e-ac14da0963c4" name="SportsNowModelingProject">
+    <elementDefinition Id="7579d2f5-5ddf-42a7-9869-dee391febcde" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4fce787b-b467-4642-94bd-7bba5caea9bf">
+        <profileInstance Id="c92b8f2f-5fb8-4d28-a2f7-c8fe2c86da2b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c3623c56-5694-4b10-9c0d-2aab01b11f18">
+        <profileInstance Id="16f58ff3-2842-417c-979d-ce930d987dfa" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

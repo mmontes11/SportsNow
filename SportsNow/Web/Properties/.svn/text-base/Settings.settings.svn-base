@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Es.Udc.DotNet.SportsNow.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SportsNow_providerInvariantName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">System.Data.SqlClient</Value>
+    </Setting>
+    <Setting Name="SportsNow_connectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=localhost\SQLExpress; Initial Catalog=sportsnow; Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SportsNow_defaultCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="SportsNow_applicationURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
